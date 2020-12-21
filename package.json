@@ -16,10 +16,25 @@
   "dependencies": {
     "gatsby": "^2.26.1",
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "@apollo/client": "^3.2.5",
+    "babel-preset-react-app": "^10.0.0",
+    "faunadb": "^3.0.1",
+    "formik": "^2.2.1",
+    "gatsby-source-graphql": "^2.7.6",
+    "netlify-cli": "^2.67.0",
+    "shortid": "^2.2.16",
+    "yup": "^0.29.3"
   },
   "devDependencies": {
-    "prettier": "2.2.1"
+    "prettier": "2.2.1",
+    "@babel/core": "^7.12.3",
+    "@storybook/addon-actions": "6.0.27",
+    "@storybook/addon-essentials": "^6.0.27",
+    "@storybook/addon-links": "^6.0.27",
+    "@storybook/react": "^6.0.27",
+    "babel-loader": "^8.1.0",
+    "react-is": "^17.0.1"
   },
   "repository": {
     "type": "git",
