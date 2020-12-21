@@ -4,9 +4,10 @@ const faunadb = require('faunadb');
 const axios = require('axios');
 
 const q = faunadb.query;
+require('dotenv').config();
 
 var client = new faunadb.Client({
-	secret: 'fnAD5MqQrdACB9dQ1KIGSHWDc6hdEVRDhV8St8ua'
+	secret: process.env.FAUNADB_ADMIN_SECRET
 });
 
 const typeDefs = gql`
@@ -54,14 +55,11 @@ const resolvers = {
 					message: d.data.message,
 					lollyPath: d.data.lollyPath
 				};
-				
 			});
-			console.log("result",result);
+			console.log('result', result);
 		}
-	
 	},
-	
-	
+
 	Mutation: {
 		createLolly: async (root, args) => {
 			const result = await client.query(
@@ -70,14 +68,14 @@ const resolvers = {
 				})
 			);
 
-			// axios
-			// 	.post('https://api.netlify.com/build_hooks/5f9b08201c44a833a923d4b4')
-			// 	.then(function(response) {
-			// 		console.log(response);
-			// 	})
-			// 	.catch(function(error) {
-			// 		console.error(error);
-			// 	});
+			axios
+				.post('https://api.netlify.com/build_hooks/5fe0e0de88a7e5c8a9c19acb')
+				.then(function(response) {
+					console.log(response);
+				})
+				.catch(function(error) {
+					console.error(error);
+				});
 
 			console.log(result);
 			return result.data;
