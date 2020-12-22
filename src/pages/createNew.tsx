@@ -71,7 +71,7 @@ export default function CreateNew() {
 
       submitLollyForm()
 
-      navigate(`/lollies/${id}`)
+      navigate(`/xyz`)
     },
   })
 

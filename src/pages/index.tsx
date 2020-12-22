@@ -6,37 +6,35 @@ import gql from 'graphql-tag';
 import { useQuery } from '@apollo/client';
 
 const GET_QUERY = gql`
-		{
-			getAllLollies {
-        recipientName
-        sendersName
-        message
-        flavorTop
-        flavorMid
-        flavorBot
-        lollyPath
-			}
+	{
+		getAllLollies {
+			recipientName
+			sendersName
+			message
+			flavorTop
+			flavorMid
+			flavorBot
+			lollyPath
 		}
-	`;
-	console.log('GETQUERY', GET_QUERY);
+	}
+`;
+console.log('GETQUERY', GET_QUERY);
 
 export default function Home() {
-	
-  const {loading,error,data} = useQuery(GET_QUERY);
-  if(loading){
-    return<p>Loading</p>
-  }
-  if(error){
-    return<p>error</p>
-  }
-  if(data){
-    console.log("indexData",data)
-    
-  }
+	const { loading, error, data } = useQuery(GET_QUERY);
+	if (loading) {
+		return <p>Loading</p>;
+	}
+	if (error) {
+		return <p>error</p>;
+	}
+	if (data) {
+		console.log('indexData', data);
+	}
 
 	return (
 		<div>
-			<Header mainHeadingText="Kuch Meetha Hojaye?" secondaryHeadingText="Aoo Khushiyaan Baantain..." />
+			<Header mainHeadingText="Is New Year Kuch Meetha Hojaye?" secondaryHeadingText="Send Happiness!" />
 			<div className="lolliesContainer">
 				<Lolly style="lollipop" />
 				<Lolly style="lollipop" lollyTop="#6b6bde" lollyBot="#4ac383" lollyMid="#d2ec27" />
