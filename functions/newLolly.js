@@ -69,7 +69,7 @@ const resolvers = {
 			);
 
 			axios
-				.post('https://api.netlify.com/build_hooks/5fe0e0de88a7e5c8a9c19acb')
+				.post('https://api.netlify.com/build_hooks/5fdf736dab133d963439dc5b')
 				.then(function(response) {
 					console.log(response);
 				})
@@ -85,7 +85,9 @@ const resolvers = {
 
 const server = new ApolloServer({
 	typeDefs,
-	resolvers
+	resolvers,
+	playground: true,
+	introspection: true
 });
 
 exports.handler = server.createHandler();

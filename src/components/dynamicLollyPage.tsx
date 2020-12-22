@@ -1,7 +1,8 @@
-import React from "react"
-import Lolly from "./lolly"
-import { graphql } from "gatsby"
-import Header from "./header"
+import React from 'react';
+import Lolly from './lolly';
+import { graphql } from 'gatsby';
+import Header from './header';
+import { useQuery } from '@apollo/client';
 
 // export const query = graphql`
 //   query MyQuery($lollyPath: String!) {
@@ -19,33 +20,47 @@ import Header from "./header"
 //   }
 // `
 
+const query = graphql`
+	query getAllLollies($lollyPath: String!) {
+		getAllLollies(lollyPath: $lollyPath) {
+			recipientName
+			sendersName
+			message
+			flavorTop
+			flavorMid
+			flavorBot
+			lollyPath
+		}
+	}
+`;
+
 export default function DynamicLollyPage({ data }) {
+	return (
+		// <div>
+		// 	<Header
+		// 		mainHeadingText="Kuch Meetha Hojaye?"
+		// 		secondaryHeadingText="You recieved a lolly, dont eat it alone !"
+		// 	/>
+		// 	<h5 className="sharableLinkContainer">Your sharable link: </h5>{' '}
+		// 	<span className="sharableLink">
+		// 		{' '}
+		// 		{`https://elastic-booth-25fb65.netlify.app/lollies/${data.LOLLIES.getLollyByPath.lollyPath}`}
+		// 	</span>
+		// 	<div className="recievedContentContainer">
+		// 		<Lolly style="lollyRecieved" />
+		// 		// lollyTop={data.LOLLIES.getLollyByPath.flavorTop}
+		// 		// lollyMid={data.LOLLIES.getLollyByPath.flavorMid}
+		// 		// lollyBot={data.LOLLIES.getLollyByPath.flavorBot}
 
-  return (
+		// 		<div className="recievedTextContainer">
+		// 			<h3>HI {data.getAllLollies.recipientName.toUpperCase()}</h3>
+    //       <p>{data.getAllLollies.message}</p>
+    //       <h4>From: {data.getAllLollies.sendersName}</h4>
+		// 		</div>
+		// 	</div>
+    // </div>
     <div>
-      <Header
-        mainHeadingText="Kuch Meetha Hojaye?"
-        secondaryHeadingText="You recieved a lolly, dont eat it alone !"
-      />
-      <h5 className="sharableLinkContainer">Your sharable link: </h5>{" "}
-      <span className="sharableLink">
-        {" "}
-        {/* {`https://sharelolly.netlify.app/lollies/${data.LOLLIES.getLollyByPath.lollyPath}`} */}
-      </span>
-      <div className="recievedContentContainer">
-        <Lolly
-          style="lollyRecieved"
-          // lollyTop={data.LOLLIES.getLollyByPath.flavorTop}
-          // lollyMid={data.LOLLIES.getLollyByPath.flavorMid}
-          // lollyBot={data.LOLLIES.getLollyByPath.flavorBot}
-        />
-
-        <div className="recievedTextContainer">
-          {/* <h3>HI {data.LOLLIES.getLollyByPath.recipientName.toUpperCase()}</h3>
-          <p>{data.LOLLIES.getLollyByPath.message}</p>
-          <h4>From: {data.LOLLIES.getLollyByPath.sendersName}</h4> */}
-        </div>
-      </div>
+      Dynamic Page
     </div>
-  )
+	);
 }

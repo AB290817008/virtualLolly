@@ -4,10 +4,10 @@
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 
-module.exports = {
-  /* Your site config here */
-  plugins: [],
-}
+// module.exports = {
+//   /* Your site config here */
+//   plugins: [],
+// }
 
 // module.exports = {
 //   plugins: [
@@ -26,3 +26,21 @@ module.exports = {
     
 //   ],
 // }
+
+module.exports = {
+  plugins: [
+    {
+      resolve: "gatsby-source-graphql",
+      options: {
+        // This type will contain remote schema Query type
+        typeName: "Lolly",
+        // This is the field under which it's accessible
+        fieldName: "getAllLollies",
+        // URL to query from
+        url: "https://kind-engelbart-84503d.netlify.app/.netlify/functions/newLolly",
+      },
+    },
+
+    
+  ],
+}
