@@ -19,7 +19,7 @@
 		"dotenv": "^8.2.0",
 		"faunadb": "^3.0.1",
 		"formik": "^2.2.1",
-		"gatsby": "^2.26.1",
+		"gatsby": "^5.3.3",
 		"gatsby-source-graphql": "^2.7.6",
 		"netlify-cli": "^2.67.0",
 		"react": "^16.12.0",
@@ -31,10 +31,10 @@
 		"prettier": "2.2.1",
 		"@babel/core": "^7.12.3",
 		"@storybook/addon-actions": "6.0.27",
-		"@storybook/addon-essentials": "^6.0.27",
+		"@storybook/addon-essentials": "^6.5.15",
 		"@storybook/addon-links": "^6.0.27",
-		"@storybook/react": "^6.0.27",
-		"babel-loader": "^8.1.0",
+		"@storybook/react": "^6.5.15",
+		"babel-loader": "^8.3.0",
 		"react-is": "^17.0.1"
 	},
 	"repository": {
